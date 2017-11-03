@@ -72,7 +72,7 @@ var firstTrainTime = $("#firstTrainTime").val().trim();
 var frequency = parseInt($("#frequency").val().trim());
 
 var firstTrainTimeConverted = moment(firstTrainTime, "HH:mm");
-var currentTime = moment().format("MMMM Do YYYY, HH:mm");
+var currentTime = moment().format("HH:mm");
 var diffTime = moment().diff(moment(firstTrainTimeConverted), "minutes");
 
 var timeRemainder = diffTime % frequency;
@@ -87,32 +87,6 @@ console.log(timeRemainder);
 console.log(minutesAway);
 console.log(nextTrain);
 console.log(nextTrainFormatted);
-
-
-
-
-
-// database.ref().on("child_added", function(childSnapshot, prevChildKey){
-//   console.log(childSnapshot.val());
-
-//   //make firebase variables for the snapshots
-//   var fTrainName = childSnapshot.val().trainName;
-//   var fDestination = childSnapshot.val().destination;
-//   var fFirstTrainTime = childSnapshot.val().firstTrainTime;
-//   var fFrequency = childSnapshot.val().frequency;
-
-//   var diffTime = moment().diff(moment.unix(fFirstTrainTime), "minutes");
-//   var timeRemainder = moment().diff(moment.unix(fFirstTrainTime), "minutes") % fFrequency;
-//   var minutesAway = fFrequency - timeRemainder;
-
-//   var nextTrain = moment().add(minutes, "m").format("HH:mm A");
-
-//   console.log(minutesAway);
-//   console.log(nextTrain);
-
-// })
-
-
 
 
 
